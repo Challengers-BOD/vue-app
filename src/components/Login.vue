@@ -16,7 +16,6 @@
           <input type="password" v-model="loginData.password" required placeholder=" ">
           <label for="password">비밀번호</label>
         </div>
-        <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
         <button type="submit">로그인</button>
       </form>
       <div class="social-login">
@@ -39,29 +38,19 @@
 import { mapActions } from 'vuex';
 
 export default {
-  name: 'LoginModal',
   data() {
     return {
       loginData: {
         username: '',
         password: ''
-      },
-      errorMessage: '',
+      }
     };
   },
   methods: {
     ...mapActions(['login', 'oauth2Login']),
     async loginUser() {
-      try {
-        await this.login(this.loginData);
-        this.$emit('login-success');
-      } catch (error) {
-        if (error.response && error.response.status === 401) {
-          this.errorMessage = '아이디 또는 비밀번호가 일치하지 않습니다.';
-        } else {
-          this.errorMessage = '로그인 실패! 오류: ' + (error.message || '알 수 없는 오류가 발생했습니다.');
-        }
-      }
+      await this.login(this.loginData);
+      this.$emit('login-success'); // 로그인 성공 이벤트 발생
     },
     googleLogin() {
       this.oauth2Login('google');
@@ -259,9 +248,5 @@ button:hover {
 
 .links a:hover {
   color: #764ba2;
-}
-
-.error-message {
-  color: red;
 }
 </style>

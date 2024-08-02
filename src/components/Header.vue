@@ -17,9 +17,11 @@
         </nav>
       </div>
     </header>
+
     <main>
       <router-view></router-view>
     </main>
+
     <login-modal v-if="showLoginModal" @close="showLoginModal = false" @login-success="handleLoginSuccess"></login-modal>
   </div>
 </template>
@@ -46,7 +48,6 @@ export default {
     handleLoginSuccess() {
       this.showLoginModal = false;
       this.$store.commit('setAuthenticated', true);
-      alert("로그인 성공!");
     },
   },
   created() {
