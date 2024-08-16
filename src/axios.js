@@ -2,7 +2,7 @@ import axios from 'axios';
 import store from './store';
 
 const instance = axios.create({
-  baseURL: 'https://challengersbod.store:8080/api', // Backend server URL
+  baseURL: 'http://43.200.90.241:8080/api', // Backend server URL
   timeout: 5000,
   withCredentials: true, // 자격 증명 포함
 });
@@ -30,13 +30,13 @@ instance.interceptors.response.use(
       }
       return response;
     },
-    async error => {
-      if (error.response && error.response.status === 401) {
-        alert("세션이 만료되었습니다. 다시 로그인 해주세요.");
-        window.location.href = '/';
-      }
-      return Promise.reject(error);
-    }
+    // async error => {
+    //   if (error.response && error.response.status === 401) {
+    //     alert("세션이 만료되었습니다. 다시 로그인 해주세요.");
+    //     window.location.href = '/';
+    //   }
+    //   return Promise.reject(error);
+    // }
 );
 
 export default instance;

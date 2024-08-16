@@ -6,7 +6,7 @@ import axios from 'axios';
 import './assets/styles.css';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://challengersbod.store:8080', // Backend server URL
+  baseURL: 'http://43.200.90.241:8080', // Backend server URL
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
