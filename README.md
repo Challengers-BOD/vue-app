@@ -54,8 +54,7 @@
 
 # [📋서비스 아키텍처]
 
-![스크린샷 2024-08-20 115945](https://github.com/user-attachments/assets/6584b2e6-b40b-4ee5-a0a1-cc12f78bf864)
-
+![image](https://github.com/user-attachments/assets/c84a0210-b831-43d5-9d93-7f1c7492a98a)
 
 <div id="g">
 
