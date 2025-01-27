@@ -54,7 +54,7 @@
 
 # [📋서비스 아키텍처]
 
-![image](https://github.com/user-attachments/assets/c84a0210-b831-43d5-9d93-7f1c7492a98a)
+![bod](https://github.com/user-attachments/assets/f5741ade-eb30-49c7-b5a2-5dad5d33f4a0)
 
 <div id="g">
 
